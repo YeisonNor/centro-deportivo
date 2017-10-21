@@ -1,0 +1,19 @@
+<table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Tipo</th>
+        <th>Texto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pqr of pqrDataService.listaPQR">
+        <td>{{pqr.nombre}}</td>
+        <td>{{pqr.correo}}</td>
+        <td>{{pqr.tipo}}</td>
+        <td>{{pqr.descripcion}}</td>
+      </tr>
+    </tbody>
+  </table>
+  

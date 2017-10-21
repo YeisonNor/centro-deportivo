@@ -1,0 +1,105 @@
+<hr class="my-5">
+<div class="row">
+        
+        <div class="col-md-3"></div>
+        <div class="col-md-6 offset-md-2" >
+                
+            
+                <div class="card card-outline-secondary">
+                    <div class="card-header">
+                        <h3 class="mb-0">Reservar</h3>
+                    </div>
+                    <div class="card-block">
+                        <form class="form" #addForm="ngForm">
+                            <div class="form-group row"> 
+                                <label class="col-lg-3 col-form-label form-control-label">Fecha</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="date" name="fecha" [(ngModel)]="reserva.fecha" #fecha="ngModel">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Hora</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="time" name="hora" [(ngModel)]="reserva.hora" #hora="ngModel">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Tiempo</label>
+                                <div class="col-lg-9">
+                                    <select name="tiempo" [(ngModel)]="reserva.tiempo" #tiempo="ngModel" class="form-control" size="0" (change)="calcularValor()">
+                                        <option value="1">1 Hora</option>
+                                        <option value="2">2 Horas</option>
+                                        <option value="3">3 Horas</option>
+                                        <option value="4">4 Horas</option>
+                                        <option value="5">5 Horas</option>
+                                        <option value="6">6 Horas</option>
+                                        <option value="7">7 Horas</option>
+                                        <option value="8">8 Horas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Cancha</label>
+                                <div class="col-lg-9">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="cancha" [(ngModel)]="reserva.cancha" #cancha="ngModel" value="1" (click)="calcularValor()"> Cancha 1
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="cancha" [(ngModel)]="reserva.cancha" #cancha="ngModel" value="2" (click)="calcularValor()"> Cancha 2
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="cancha" [(ngModel)]="reserva.cancha" #cancha="ngModel" value="3" (click)="calcularValor()"> Cancha 3
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="cancha" [(ngModel)]="reserva.cancha" #cancha="ngModel" value="4" (click)="calcularValor()"> Cancha 4
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Valor</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="number" name="valor" [(ngModel)]="reserva.valor" #valor="ngModel" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <legend>Datos Responsable</legend>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" name="nombreResponsable" [(ngModel)]="reserva.nombreResponsable" #nombreResponsable="ngModel" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Identificación</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" name="identificacionResponsable" [(ngModel)]="reserva.identificacionResponsable" #identificacionResponsable="ngModel">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Telefono</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" name="telefonoResponsable" [(ngModel)]="reserva.telefonoResponsable" #telefonoResponsable="ngModel">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label"></label>
+                                <div class="col-lg-6">
+                                    <input type="reset" class="btn btn-secondary" value="Cancelar" (click)="nuevaReserva()">
+                                    <input type="button" class="btn btn-primary" value="Reservar" (click)="crearReserva()">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <div class="col-md-3"></div>
+</div>

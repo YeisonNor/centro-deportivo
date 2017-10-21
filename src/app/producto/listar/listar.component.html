@@ -1,0 +1,19 @@
+<table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Categoria</th>
+        <th>Valor</th>
+        <th>Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productoDataService.listaProductos">
+        <td>{{producto.nombreProducto}}</td>
+        <td>{{producto.categoria}}</td>
+        <td>{{producto.valor | currency:'COP':false}}</td>
+        <td><img style="width: 100px; height: 100px;" data-src="../../../assets/images/{{producto.foto}}" alt="Producto">  </td>
+      </tr>
+    </tbody>
+  </table>
+  

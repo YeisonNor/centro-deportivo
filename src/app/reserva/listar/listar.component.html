@@ -1,0 +1,26 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Tiempo</th>
+      <th>Responsable</th>
+      <th>Identificación</th>
+      <th>Telefono</th>
+      <th>Cancha</th>
+      <th>Valor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reserva of reservaDataService.reservaLista">
+      <td>{{reserva.fecha}}</td>
+      <td>{{reserva.hora}}</td>
+      <td>{{reserva.duracion}}</td>
+      <td>{{reserva.nombreResponsable}}</td>
+      <td>{{reserva.identificacionResponsable}}</td>
+      <td>{{reserva.telefonoResponsable}}</td>
+      <td>Cancha {{reserva.cancha}}</td>
+      <td>{{reserva.valor | currency:'COP':false}}</td>
+    </tr>
+  </tbody>
+</table>
